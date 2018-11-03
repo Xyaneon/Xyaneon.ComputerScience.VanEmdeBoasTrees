@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.VanEmdeBoasTrees", "Xyaneon.ComputerScience.VanEmdeBoasTrees\Xyaneon.ComputerScience.VanEmdeBoasTrees.csproj", "{82E165F7-92E2-43EC-9742-9F5284ACD5E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.VanEmdeBoasTrees.Test", "Xyaneon.ComputerScience.VanEmdeBoasTrees.Test\Xyaneon.ComputerScience.VanEmdeBoasTrees.Test.csproj", "{19196039-D07F-4C44-8E7E-097B61735C1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{82E165F7-92E2-43EC-9742-9F5284ACD5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82E165F7-92E2-43EC-9742-9F5284ACD5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82E165F7-92E2-43EC-9742-9F5284ACD5E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19196039-D07F-4C44-8E7E-097B61735C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19196039-D07F-4C44-8E7E-097B61735C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19196039-D07F-4C44-8E7E-097B61735C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19196039-D07F-4C44-8E7E-097B61735C1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
