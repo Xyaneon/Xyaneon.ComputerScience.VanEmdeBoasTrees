@@ -1,5 +1,7 @@
 # Xyaneon.ComputerScience.VanEmdeBoasTrees
 
+[![NuGet](https://img.shields.io/nuget/v/Xyaneon.ComputerScience.VanEmdeBoasTrees.svg?style=flat)](https://www.nuget.org/packages/Xyaneon.ComputerScience.VanEmdeBoasTrees/)
+
 A .NET Standard library which provides a van Emde Boas tree implementation for educational purposes.
 
 ## Usage
