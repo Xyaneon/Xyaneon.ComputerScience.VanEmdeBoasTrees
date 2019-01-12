@@ -24,7 +24,7 @@ value you plan on storing in the tree.
 An alternate constructor is available if you also want to supply the values to store in the tree right away:
 
 ```csharp
-IReadOnlyList<int> yourValues = new List<int>({ 1, 2, 3 }).AsReadOnly();
+IEnumerable<int> yourValues = new List<int>({ 1, 2, 3 });
 
 var tree = new vanEmdeBoasTree(4, yourValues);
 ```
@@ -74,12 +74,6 @@ the [LICENSE.txt][license] file for additional information.
 
 ## Additional information
 
-This code was adapted from my submission for an MCS 5803: Intro to Algorithm Design homework
-assignment at Lawrence Technological University during the Fall 2018 semester. The instructor,
-Dr. David Fawcett, gave me permission to publicly post it as a resource for future students
-who choose to use C#. I made a couple changes since the original submission, including adding
-the [`IVanEmdeBoasTreeNode`][iVanEmdeBoasTreeNode] interface and adding more documentation.
-
 The van Emde Boas tree implementation provided is based on the pseudocode presented in the
 "Introduction to Algorithm Design" (CLRS) book.
 
@@ -99,6 +93,5 @@ applications; this is left as an exercise to the reader.
 [main-project]: https://github.com/Xyaneon/Xyaneon.ComputerScience.VanEmdeBoasTrees/tree/master/Xyaneon.ComputerScience.VanEmdeBoasTrees
 [test-project]: https://github.com/Xyaneon/Xyaneon.ComputerScience.VanEmdeBoasTrees/tree/master/Xyaneon.ComputerScience.VanEmdeBoasTrees.Test
 [license]: https://github.com/Xyaneon/Xyaneon.ComputerScience.VanEmdeBoasTrees/blob/master/LICENSE.txt
-[iVanEmdeBoasTreeNode]: https://github.com/Xyaneon/Xyaneon.ComputerScience.VanEmdeBoasTrees/blob/master/Xyaneon.ComputerScience.VanEmdeBoasTrees/IVanEmdeBoasTreeNode.cs
 [wikipedia-article]: https://en.wikipedia.org/wiki/Van_Emde_Boas_tree
 [book-page]: https://mitpress.mit.edu/books/introduction-algorithms
