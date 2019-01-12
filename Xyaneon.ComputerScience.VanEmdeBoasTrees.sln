@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.VanEmdeBoasTrees", "Xyaneon.ComputerScience.VanEmdeBoasTrees\Xyaneon.ComputerScience.VanEmdeBoasTrees.csproj", "{82E165F7-92E2-43EC-9742-9F5284ACD5E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyaneon.ComputerScience.VanEmdeBoasTrees", "Xyaneon.ComputerScience.VanEmdeBoasTrees\Xyaneon.ComputerScience.VanEmdeBoasTrees.csproj", "{82E165F7-92E2-43EC-9742-9F5284ACD5E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.VanEmdeBoasTrees.Test", "Xyaneon.ComputerScience.VanEmdeBoasTrees.Test\Xyaneon.ComputerScience.VanEmdeBoasTrees.Test.csproj", "{19196039-D07F-4C44-8E7E-097B61735C1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyaneon.ComputerScience.VanEmdeBoasTrees.Test", "Xyaneon.ComputerScience.VanEmdeBoasTrees.Test\Xyaneon.ComputerScience.VanEmdeBoasTrees.Test.csproj", "{19196039-D07F-4C44-8E7E-097B61735C1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0ED1D87B-4663-4DB0-BF6A-B31D1B2C5A84}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
