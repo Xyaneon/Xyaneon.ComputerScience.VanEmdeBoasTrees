@@ -1,0 +1,487 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xyaneon.ComputerScience.VanEmdeBoasTrees</name>
+    </assembly>
+    <members>
+        <member name="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree">
+            <summary>
+            Exposes properties and methods on classes which represent
+            a van Emde Boas tree.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Maximum">
+            <summary>
+            Gets the maximum value stored in this tree.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Minimum">
+            <summary>
+            Gets the minimum value stored in this tree.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Universe">
+            <summary>
+            Gets the size of the universe for this node.
+            </summary>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Delete(System.Int32)">
+            <summary>
+            Deletes <paramref name="value"/> from this subtree.
+            </summary>
+            <param name="value">
+            The value to delete.
+            </param>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Insert(System.Int32)">
+            <summary>
+            Inserts <paramref name="value"/> into this subtree.
+            </summary>
+            <param name="value">
+            The value to insert.
+            </param>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Member(System.Int32)">
+            <summary>
+            Determines whether <paramref name="value"/> is contained
+            in this subtree.
+            </summary>
+            <param name="value">
+            The value to look for.
+            </param>
+            <returns>
+            <see langword="true"/> if <paramref name="value"/> is
+            contained in this subtree; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Predecessor(System.Int32)">
+            <summary>
+            Determines the predecessor of <paramref name="value"/> in this
+            subtree.
+            </summary>
+            <param name="value">
+            The value to find the predecessor of.
+            </param>
+            <returns>
+            The predecessor of <paramref name="value"/> in this subtree if
+            currently stored; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree.Successor(System.Int32)">
+            <summary>
+            Determines the successor of <paramref name="value"/> in this
+            subtree.
+            </summary>
+            <param name="value">
+            The value to find the successor of.
+            </param>
+            <returns>
+            The successor of <paramref name="value"/> in this subtree if
+            currently stored; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTreeNode">
+            <summary>
+            Exposes properties and methods on classes which represent
+            a van Emde Boas tree node.
+            </summary>
+            <seealso cref="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree"/>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTreeNode.Cluster">
+            <summary>
+            Gets this node's cluster.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTreeNode.Summary">
+            <summary>
+            Gets this node's summary.
+            </summary>
+        </member>
+        <member name="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.Utility">
+            <summary>
+            Provides helper methods to the rest of this assembly.
+            </summary>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.Utility.IsPowerOfTwo(System.Int32)">
+            <summary>
+            Determines whether a given <paramref name="value"/> is a
+            power of two.
+            </summary>
+            <param name="value">
+            The value to check.
+            </param>
+            <returns>
+            <see langword="true"/> if <paramref name="value"/> is a
+            power of two; otherwise, <see langword="false"/>.
+            </returns>
+            <remarks>
+            The following check is based on this:
+            https://stackoverflow.com/a/600306
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.Utility.Lg(System.Double)">
+            <summary>
+            Computes the binary log of <paramref name="value"/>.
+            </summary>
+            <param name="value">
+            The value to compute the binary log of.
+            </param>
+            <returns>
+            The binary log of <paramref name="value"/>.
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.Utility.LowerSquareRoot(System.Int32)">
+            <summary>
+            Computes the lower square root of <paramref name="value"/>.
+            </summary>
+            <param name="value">
+            The value to compute the lower square root of.
+            </param>
+            <returns>
+            The lower square root of <paramref name="value"/>.
+            </returns>
+            <remarks>
+            This method is based upon the formula for the lower square root
+            given in the CLRS book on page 546.
+            </remarks>
+            <seealso cref="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.Utility.UpperSquareRoot(System.Int32)"/>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.Utility.UpperSquareRoot(System.Int32)">
+            <summary>
+            Computes the upper square root of <paramref name="value"/>.
+            </summary>
+            <param name="value">
+            The value to compute the upper square root of.
+            </param>
+            <returns>
+            The upper square root of <paramref name="value"/>.
+            </returns>
+            <remarks>
+            This method is based upon the formula for the upper square root
+            given in the CLRS book on page 546.
+            </remarks>
+            <seealso cref="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.Utility.LowerSquareRoot(System.Int32)"/>
+        </member>
+        <member name="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree">
+            <summary>
+            Represents a van Emde Boas tree.
+            </summary>
+            <seealso cref="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTree"/>
+            <seealso cref="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode"/>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree"/> class
+            with the provided <paramref name="universe"/> size.
+            </summary>
+            <param name="universe">
+            The size of the universe for this tree.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="universe"/> is smaller than two.
+            -or-
+            <paramref name="universe"/> is not a power of two.
+            </exception>
+            <remarks>
+            Calling this constructor will create an empty van Emde Boas subtree recursively.
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.#ctor(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree"/> class
+            with the provided <paramref name="universe"/> size and <paramref name="values"/>.
+            </summary>
+            <param name="universe">
+            The size of the universe for this tree.
+            </param>
+            <param name="values">
+            The collection of values to initialize the tree with.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="values"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="universe"/> is smaller than two.
+            -or-
+            <paramref name="universe"/> is not a power of two.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            One of the elements of <paramref name="values"/> lies outside the universe.
+            </exception>
+            <remarks>
+            Calling this constructor will create an van Emde Boas subtree recursively,
+            which will contain the supplied values.
+            </remarks>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Maximum">
+            <summary>
+            Gets the maximum value stored in this tree.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Minimum">
+            <summary>
+            Gets the minimum value stored in this tree.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Universe">
+            <summary>
+            Gets the size of the universe for this node.
+            </summary>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Delete(System.Int32)">
+            <summary>
+            Deletes <paramref name="value"/> from this subtree.
+            </summary>
+            <param name="value">
+            The value to delete.
+            </param>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Insert(System.Int32)">
+            <summary>
+            Inserts <paramref name="value"/> into this subtree.
+            </summary>
+            <param name="value">
+            The value to insert.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="value"/> is less than zero.
+            -or-
+            <paramref name="value"/> is equal to or greater than the
+            value of this object's <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Universe"/> property.
+            </exception>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Member(System.Int32)">
+            <summary>
+            Determines whether <paramref name="value"/> is contained
+            in this subtree.
+            </summary>
+            <param name="value">
+            The value to look for.
+            </param>
+            <returns>
+            <see langword="true"/> if <paramref name="value"/> is
+            contained in this subtree; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Predecessor(System.Int32)">
+            <summary>
+            Determines the predecessor of <paramref name="value"/> in this
+            subtree.
+            </summary>
+            <param name="value">
+            The value to find the predecessor of.
+            </param>
+            <returns>
+            The predecessor of <paramref name="value"/> in this subtree if
+            currently stored; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Successor(System.Int32)">
+            <summary>
+            Determines the successor of <paramref name="value"/> in this
+            subtree.
+            </summary>
+            <param name="value">
+            The value to find the successor of.
+            </param>
+            <returns>
+            The successor of <paramref name="value"/> in this subtree if
+            currently stored; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTree.Root">
+            <summary>
+            Gets the root of this van Emde Boas tree.
+            </summary>
+        </member>
+        <member name="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode">
+            <summary>
+            Represents a node in a van Emde Boas tree.
+            </summary>
+            <seealso cref="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.IVanEmdeBoasTreeNode"/>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode"/> class
+            with the provided <paramref name="universe"/> size.
+            </summary>
+            <param name="universe">
+            The size of the universe for this node.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="universe"/> is smaller than two.
+            -or-
+            <paramref name="universe"/> is not a power of two.
+            </exception>
+            <remarks>
+            Calling this constructor will create an empty van Emde Boas subtree recursively.
+            </remarks>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Cluster">
+            <summary>
+            Gets this node's cluster.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Maximum">
+            <summary>
+            Gets the maximum value stored under this node.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Minimum">
+            <summary>
+            Gets the minimum value stored under this node.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Summary">
+            <summary>
+            Gets this node's summary.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe">
+            <summary>
+            Gets the size of the universe for this node.
+            </summary>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Delete(System.Int32)">
+            <summary>
+            Deletes <paramref name="x"/> from this subtree.
+            </summary>
+            <param name="x">
+            The value to delete.
+            </param>
+            <remarks>
+            This method is based upon the vEB-Tree-Delete(V, x)
+            algorithm pseudocode from the CLRS book on page 554.
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Insert(System.Int32)">
+            <summary>
+            Inserts <paramref name="x"/> into this subtree.
+            </summary>
+            <param name="x">
+            The value to insert.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="x"/> is less than zero.
+            -or-
+            <paramref name="x"/> is equal to or greater than the
+            value of this object's <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe"/> property.
+            </exception>
+            <remarks>
+            This method is based upon the vEB-Tree-Insert(V, x)
+            algorithm pseudocode from the CLRS book on page 553.
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Member(System.Int32)">
+            <summary>
+            Determines whether <paramref name="x"/> is contained
+            in this subtree.
+            </summary>
+            <param name="x">
+            The value to look for.
+            </param>
+            <returns>
+            <see langword="true"/> if <paramref name="x"/> is
+            contained in this subtree; otherwise, <see langword="false"/>.
+            </returns>
+            <remarks>
+            This method is based upon the vEB-Tree-Member(V, x)
+            algorithm pseudocode from the CLRS book on page 550.
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Predecessor(System.Int32)">
+            <summary>
+            Determines the predecessor of <paramref name="x"/> in this
+            subtree.
+            </summary>
+            <param name="x">
+            The value to find the predecessor of.
+            </param>
+            <returns>
+            The predecessor of <paramref name="x"/> in this subtree if
+            currently stored; otherwise, <see langword="null"/>.
+            </returns>
+            <remarks>
+            This method is based upon the vEB-Tree-predecessor(V, x)
+            algorithm pseudocode from the CLRS book on page 552.
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Successor(System.Int32)">
+            <summary>
+            Determines the successor of <paramref name="x"/> in this
+            subtree.
+            </summary>
+            <param name="x">
+            The value to find the successor of.
+            </param>
+            <returns>
+            The successor of <paramref name="x"/> in this subtree if
+            currently stored; otherwise, <see langword="null"/>.
+            </returns>
+            <remarks>
+            This method is based upon the vEB-Tree-Successor(V, x)
+            algorithm pseudocode from the CLRS book on page 551.
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.EmptyInsert(System.Int32)">
+            <summary>
+            Inserts an only element into this subtree.
+            </summary>
+            <param name="x">
+            The value to insert.
+            </param>
+            <remarks>
+            This method is based upon the vEB-Empty-Tree-Insert(V, x)
+            algorithm pseudocode from the CLRS book on page 553.
+            </remarks>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.High(System.Int32)">
+            <summary>
+            Computes the most significant (lg <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe"/>) / 2
+            bits of <paramref name="x"/> (e.g., the number of
+            <paramref name="x"/>'s cluster).
+            </summary>
+            <param name="x">
+            A value which could be stored in this tree.
+            </param>
+            <returns>
+            The most significant (lg <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe"/>) / 2
+            bits of <paramref name="x"/> (e.g., the number of
+            <paramref name="x"/>'s cluster).
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Index(System.Int32,System.Int32)">
+            <summary>
+            Constructs an element number from <paramref name="x"/> and
+            <paramref name="y"/>.
+            </summary>
+            <param name="x">
+            The most significant (lg <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe"/>) / 2 bits of
+            the element number.
+            </param>
+            <param name="y">
+            The least significant (lg <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe"/>) / 2 bits of
+            the element number.
+            </param>
+            <returns>
+            The element number constructed from <paramref name="x"/> and
+            <paramref name="y"/>.
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Low(System.Int32)">
+            <summary>
+            Computes the least significant (lg <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe"/>) / 2
+            bits of <paramref name="x"/> (e.g., the position of
+            <paramref name="x"/> within its cluster).
+            </summary>
+            <param name="x">
+            A value which could be stored in this tree.
+            </param>
+            <returns>
+            The least significant (lg <see cref="P:Xyaneon.ComputerScience.VanEmdeBoasTrees.VanEmdeBoasTreeNode.Universe"/>) / 2
+            bits of <paramref name="x"/> (e.g., the position of
+            <paramref name="x"/> within its cluster).
+            </returns>
+        </member>
+    </members>
+</doc>
